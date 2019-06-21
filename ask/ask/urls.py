@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from ask.qa import tests
 
 urlpatterns = [
     url(r'^$', include('qa.urls'))
