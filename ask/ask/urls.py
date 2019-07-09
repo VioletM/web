@@ -18,6 +18,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^', include('qa.urls')),
+    url(r'^$', include('qa.urls')),
     url(r'^login/', include('qa.urls')),
     url(r'^signup/', include('qa.urls')),
     url(r'^question/\d+', include('qa.urls')),
