@@ -34,7 +34,7 @@ def popular_page(request, *args, **kwargs):
         raise Http404
     page = paginator.page(page)
     paginator.baseurl = '/popular/?page='
-    return render(request, 'templates/index.html', {
+    return render(request, 'index.html', {
         'questions': page.object_list,
         'paginator': paginator,
         'page': page
@@ -43,7 +43,7 @@ def popular_page(request, *args, **kwargs):
 def question_page(request, **kwargs):
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
-    return render(request, 'templates/question.html', {
+    return render(request, 'question.html', {
         'question': question,
         'answers': Answer.objects.filter(question=question).all()
     })
