@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.http import require_GET
 
 from qa.models import Question, Answer
 
@@ -8,9 +9,11 @@ from qa.models import Question, Answer
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
 
+@require_GET
 def main_page(request, *args, **kwargs):
     page = request.GET.get('page')
     if page is None:
+        print('OUCH')
         raise Http404
     else:
         page = int(page)
