@@ -4,15 +4,15 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 
+
+class QuestionManager(models.Manager):
+    def new(self):
+        return self.order_by('-added_at')
+
+    def popular(self):
+        return self.order_by('-rating')
+
 class Question(models.Model):
-
-    class QuestionManager(models.Manager):
-        def new(self):
-            return self.order_by('-added_at')
-
-        def popular(self):
-            return self.order_by('-rating')
-
     object = QuestionManager()
     title = models.CharField(max_length=250)
     text = models.TextField()
