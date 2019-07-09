@@ -9,7 +9,11 @@ def test(request, *args, **kwargs):
     return HttpResponse('OK')
 
 def main_page(request, *args, **kwargs):
-    page = int(request.GET.get('page'))
+    page = request.GET.get('page')
+    if page is None:
+        raise Http404
+    else:
+        page = int(page)
     limit = 10
     questions = Question.objects.new()
     paginator = Paginator(questions, limit)
