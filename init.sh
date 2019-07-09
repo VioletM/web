@@ -1,7 +1,7 @@
 # MySQL
 sudo /etc/init.d/mysql start
-python3 manage.py makemigrations
-python3 manage.py migrate
+python ask/manage.py makemigrations
+python ask/manage.py migrate
 
 # nginx and gunicorn
 sudo cp /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/nginx.conf

@@ -16,16 +16,16 @@ class Question(models.Model):
     object = QuestionManager()
     title = models.CharField(250)
     text = models.TextField()
-    added_at = models.DateField(default=dt.now)
+    added_at = models.DateField(default=dt.datetime.now)
     rating = models.IntegerField(default=0)
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING())
     likes = models.ManyToManyField(User, related_name='question_like_user')
 
 class Answer(models.Model):
     text = models.TextField()
-    added_at = models.DateField(default=dt.now)
-    question = models.ForeignKey(Question)
-    author = models.ForeignKey(User)
+    added_at = models.DateField(default=dt.datetime.now)
+    question = models.ForeignKey(Question, on_delete=models.DO_NOTHING())
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING())
 
 
 
