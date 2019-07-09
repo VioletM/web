@@ -38,7 +38,7 @@ def popular_page(request, *args, **kwargs):
         'page': page
     })
 
-def question_page(request, *args, **kwargs):
+def question_page(request, **kwargs):
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
     return render(request, 'templates/question.html', {
