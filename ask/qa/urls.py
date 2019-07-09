@@ -18,7 +18,7 @@ from qa.views import test, main_page, popular_page, question_page
 
 urlpatterns = [
     # url(r'^$', main_page, 'main-page'),
-    url(r'^$', test),
+    url(r'^$', main_page, 'main-page'),
     url(r'^login/', test),
     url(r'^signup/', test),
     url(r'^question/(?P<num>\d+)/', question_page, 'question-page'),
