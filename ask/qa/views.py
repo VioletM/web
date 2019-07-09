@@ -9,6 +9,7 @@ def test(request, *args, **kwargs):
     return HttpResponse('OK')
 
 def main_page(request, *args, **kwargs):
+    return HttpResponse('OK')
     page = int(request.GET.get('page'))
     limit = 10
     questions = Question.objects.new()
@@ -17,7 +18,7 @@ def main_page(request, *args, **kwargs):
         raise Http404
     page = paginator.page(page)
     paginator.baseurl = '/?page='
-    return HttpResponse('OK')
+
     return render(request, 'index.html', {
         'questions': page.object_list,
         'paginator': paginator,
