@@ -44,7 +44,9 @@ def popular_page(request, *args, **kwargs):
 def question_page(request, **kwargs):
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
+    print(question.title)
     return render(request, 'question.html', {
         'question': question,
+        'title': question.title,
         'answers': Answer.objects.filter(question=question)[:]
     })
