@@ -45,5 +45,5 @@ def question_page(request, **kwargs):
     question = get_object_or_404(Question, id=num)
     return render(request, 'question.html', {
         'question': question,
-        'answers': Answer.objects.filter(question=question).all()
+        'answers': Answer.objects.filter(question=question)[:]
     })
