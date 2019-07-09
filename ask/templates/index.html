@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Questions</h1>
+
+{% for question in questions %}
+<h3>{{question.title}}</h3>
+<a href="{{ question.get_url }}"></a>
+{% endfor %}
+
+<nav>
+    <ul class="pagination">
+        {% for p in paginator.page_range %}
+        {% if p.number == page.number %}
+        <li class="active">
+            {% else %}
+        <li>
+            {% endif %}
+            <a href="{{ paginator.baseurl }}{{ p.number }}">
+                {{ p.number }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+</body>
+</html>
