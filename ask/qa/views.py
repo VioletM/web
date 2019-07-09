@@ -11,12 +11,7 @@ def test(request, *args, **kwargs):
 
 @require_GET
 def main_page(request, *args, **kwargs):
-    page = request.GET.get('page')
-    if page is None:
-        print('OUCH')
-        raise Http404
-    else:
-        page = int(page)
+    page = int(request.GET.get('page', 0))
     limit = 10
     questions = Question.objects.new()
     paginator = Paginator(questions, limit)
