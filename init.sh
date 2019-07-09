@@ -1,5 +1,7 @@
 # MySQL
 sudo /etc/init.d/mysql start
+mysql -uroot -e "create database stepic_web;"
+mysql -uroot -e "grant all privileges on stepic_web.* to 'box'@'localhost' with grant option;"
 python3 ask/manage.py makemigrations
 python3 ask/manage.py migrate
 
