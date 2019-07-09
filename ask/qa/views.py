@@ -40,6 +40,7 @@ def popular_page(request, *args, **kwargs):
         'page': page
     })
 
+@require_GET
 def question_page(request, **kwargs):
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
