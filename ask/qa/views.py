@@ -45,6 +45,7 @@ def question_page(request, **kwargs):
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
     print(question.title)
+    raise Http404
     return render(request, 'question.html', {
         'question': question,
         'title': question.title,
