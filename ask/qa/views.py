@@ -22,6 +22,9 @@ def main_page(request, *args, **kwargs):
         raise Http404
     page = paginator.page(page)
     paginator.baseurl = '/?page='
+    for question in page.object_list:
+        logger.debug(question.get_url())
+        logger.debug(question.title)
     return render(request, 'index.html', {
         'questions': page.object_list,
         'paginator': paginator,
