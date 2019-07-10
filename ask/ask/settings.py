@@ -146,6 +146,8 @@ LOGGING = {
         },
         'django': {
             'handlers': ['file', ],
+            'level': 'DEBUG',
+            'propagate': True,
         },
         'py.warnings': {
             'handlers': ['file', ],
