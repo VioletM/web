@@ -46,7 +46,7 @@ def question_page(request, **kwargs):
     else:
         num = int(kwargs.get('num'))
         question = get_object_or_404(Question, id=num)
-        form = AnswerForm()
+        form = AnswerForm(initial={'question': question.pk})
         return render(request, 'question.html', {
             'question': question,
             'title': question.title,
