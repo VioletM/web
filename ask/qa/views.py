@@ -8,7 +8,9 @@ from qa.models import Question, Answer
 
 logger = logging.getLogger(__name__)
 
+@require_GET
 def test(request, *args, **kwargs):
+    logger.debug('test')
     return HttpResponse('OK')
 
 @require_GET

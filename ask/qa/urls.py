@@ -23,5 +23,4 @@ urlpatterns = [
     url(r'^question/(?P<num>\d+)', question_page, name='question-page'),
     url(r'^ask/', test),
     url(r'^popular/', popular_page, name='popular-page'),
-    url(r'^new/', test),
 ]
