@@ -22,7 +22,7 @@ class Question(models.Model):
     added_at = models.DateField(auto_now_add=True)
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    likes = models.ManyToManyField(User, related_name='question_like_user')
+    likes = models.ManyToManyField(User, related_name='question_like_user', blank=True)
 
     def get_url(self):
         return reverse('question-page', kwargs={'num': self.pk})

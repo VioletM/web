@@ -1,7 +1,8 @@
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
+from qa.forms import AskForm, AnswerForm
 import logging
 
 from qa.models import Question, Answer
@@ -26,26 +27,32 @@ def main_page(request, *args, **kwargs):
         raise Http404
     page = paginator.page(page)
     paginator.baseurl = '/?page='
-    for question in page.object_list:
-        logger.debug(question.get_url())
-        logger.debug(question.title)
     return render(request, 'index.html', {
         'paginator': paginator,
         'page': page
     })
 
-@require_GET
+
 def question_page(request, **kwargs):
     logger = logging.getLogger(__name__)
     logger.debug('question_page')
-    num = int(kwargs.get('num'))
-    question = get_object_or_404(Question, id=num)
-    print(question.title)
-    return render(request, 'question.html', {
-        'question': question,
-        'title': question.title,
-        'answers': Answer.objects.filter(question=question)[:]
-    })
+
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            answer = form.save()
+            url = answer.question.get_url()
+            return HttpResponseRedirect(url)
+    else:
+        num = int(kwargs.get('num'))
+        question = get_object_or_404(Question, id=num)
+        form = AnswerForm()
+        return render(request, 'question.html', {
+            'question': question,
+            'title': question.title,
+            'answers': Answer.objects.filter(question=question)[:],
+            'form': form,
+        })
 
 @require_GET
 def popular_page(request, *args, **kwargs):
@@ -64,4 +71,18 @@ def popular_page(request, *args, **kwargs):
         'page': page
     })
 
+def ask_page(request, *args, **kwargs):
+    logger = logging.getLogger(__name__)
+    logger.debug('ask_page')
+    if request.method == 'POST':
+        form = AskForm(request.POST)
+        if form.is_valid():
+            question = form.save()
+            url = question.get_url()
+            return HttpResponseRedirect(url)
+    else:
+        form = AskForm()
+        return render(request, 'ask.html', {'form': form})
 
+
+# form = AnswerForm(initial={'question': question_id})

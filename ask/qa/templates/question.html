@@ -8,6 +8,8 @@
 <h1>{{title}}</h1>
 <p>{{question.title}}</p>
 <p>{{question.text}}</p>
+{{form.as_ul}}
+{% csrf_token %}
 {% for answer in answers %}
 <p>{{answer.text}}</p>
 {% endfor %}
