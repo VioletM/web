@@ -13,8 +13,7 @@ def test(request, *args, **kwargs):
 
 @require_GET
 def main_page(request, *args, **kwargs):
-    logger.debug('_'*64
-                 +'main_page')
+    logger.debug('main_page')
     page = int(request.GET.get('page', 1))
     limit = 10
     questions = Question.objects.new()
@@ -31,7 +30,7 @@ def main_page(request, *args, **kwargs):
 
 @require_GET
 def popular_page(request, *args, **kwargs):
-    logger.info('popular_page')
+    logger.debug('popular_page')
     page = int(request.GET.get('page'))
     limit = 10
     questions = Question.objects.popular()
@@ -48,7 +47,7 @@ def popular_page(request, *args, **kwargs):
 
 @require_GET
 def question_page(request, **kwargs):
-    logger.info('question_page')
+    logger.debug('question_page')
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
     print(question.title)
