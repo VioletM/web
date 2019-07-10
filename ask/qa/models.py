@@ -26,7 +26,7 @@ class Question(models.Model):
 
     def get_url(self):
         # return reverse('question-page', kwargs={'num': self.pk})
-        return '/question/'+self.pk
+        return '/question/'+str(self.pk)
 
 
 class Answer(models.Model):
