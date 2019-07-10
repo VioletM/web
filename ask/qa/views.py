@@ -2,6 +2,7 @@ from django.http import HttpResponse, Http404
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
+import logging
 
 from qa.models import Question, Answer
 
@@ -11,6 +12,8 @@ def test(request, *args, **kwargs):
 
 @require_GET
 def main_page(request, *args, **kwargs):
+    logger = logging.getLogger()
+    logger.info('main_page')
     page = int(request.GET.get('page', 1))
     limit = 10
     questions = Question.objects.new()
@@ -26,6 +29,8 @@ def main_page(request, *args, **kwargs):
     })
 
 def popular_page(request, *args, **kwargs):
+    logger = logging.getLogger()
+    logger.info('popular_page')
     page = int(request.GET.get('page'))
     limit = 10
     questions = Question.objects.popular()
@@ -42,10 +47,11 @@ def popular_page(request, *args, **kwargs):
 
 @require_GET
 def question_page(request, **kwargs):
+    logger = logging.getLogger()
+    logger.info('question_page')
     num = int(kwargs.get('num'))
     question = get_object_or_404(Question, id=num)
     print(question.title)
-    raise Http404
     return render(request, 'question.html', {
         'question': question,
         'title': question.title,
