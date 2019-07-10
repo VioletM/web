@@ -13,7 +13,8 @@ def test(request, *args, **kwargs):
 
 @require_GET
 def main_page(request, *args, **kwargs):
-    logger.info('main_page')
+    logger.debug('_'*64
+                 +'main_page')
     page = int(request.GET.get('page', 1))
     limit = 10
     questions = Question.objects.new()
