@@ -2,3 +2,189 @@ main_page
 main_page
 main_page
 main_page
+main_page
+main_page
+main_page
+main_page
+main_page
+main_page
+main_page
+main_page
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT VERSION(); args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@sql_mode; args=None
+(0.000) SELECT @@sql_mode; args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT VERSION(); args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'answer' AND `django_content_type`.`app_label` = 'qa'); args=('answer', 'qa')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'answer' AND `django_content_type`.`app_label` = 'qa'); args=('answer', 'qa')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'question' AND `django_content_type`.`app_label` = 'qa'); args=('question', 'qa')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'question' AND `django_content_type`.`app_label` = 'qa'); args=('question', 'qa')
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8, 7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8, 7)
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8, 7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8, 7)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'qa'; args=('qa',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'qa'; args=('qa',)
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.002) SELECT MAX(`qa_question`.`rating`) AS `rating__max` FROM `qa_question`; args=()
+(0.002) SELECT MAX(`qa_question`.`rating`) AS `rating__max` FROM `qa_question`; args=()
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'x'; args=('x',)
+(0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'x'; args=('x',)
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 0', 'text 0', '2019-07-10', 232, 1); args=['question 0', 'text 0', u'2019-07-10', 232, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 0', 'text 0', '2019-07-10', 232, 1); args=['question 0', 'text 0', u'2019-07-10', 232, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 1', 'text 1', '2019-07-10', 233, 1); args=['question 1', 'text 1', u'2019-07-10', 233, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 1', 'text 1', '2019-07-10', 233, 1); args=['question 1', 'text 1', u'2019-07-10', 233, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 2', 'text 2', '2019-07-10', 234, 1); args=['question 2', 'text 2', u'2019-07-10', 234, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 2', 'text 2', '2019-07-10', 234, 1); args=['question 2', 'text 2', u'2019-07-10', 234, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 3', 'text 3', '2019-07-10', 235, 1); args=['question 3', 'text 3', u'2019-07-10', 235, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 3', 'text 3', '2019-07-10', 235, 1); args=['question 3', 'text 3', u'2019-07-10', 235, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 4', 'text 4', '2019-07-10', 236, 1); args=['question 4', 'text 4', u'2019-07-10', 236, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 4', 'text 4', '2019-07-10', 236, 1); args=['question 4', 'text 4', u'2019-07-10', 236, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 5', 'text 5', '2019-07-10', 237, 1); args=['question 5', 'text 5', u'2019-07-10', 237, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 5', 'text 5', '2019-07-10', 237, 1); args=['question 5', 'text 5', u'2019-07-10', 237, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 6', 'text 6', '2019-07-10', 238, 1); args=['question 6', 'text 6', u'2019-07-10', 238, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 6', 'text 6', '2019-07-10', 238, 1); args=['question 6', 'text 6', u'2019-07-10', 238, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 7', 'text 7', '2019-07-10', 239, 1); args=['question 7', 'text 7', u'2019-07-10', 239, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 7', 'text 7', '2019-07-10', 239, 1); args=['question 7', 'text 7', u'2019-07-10', 239, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 8', 'text 8', '2019-07-10', 240, 1); args=['question 8', 'text 8', u'2019-07-10', 240, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 8', 'text 8', '2019-07-10', 240, 1); args=['question 8', 'text 8', u'2019-07-10', 240, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 9', 'text 9', '2019-07-10', 241, 1); args=['question 9', 'text 9', u'2019-07-10', 241, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 9', 'text 9', '2019-07-10', 241, 1); args=['question 9', 'text 9', u'2019-07-10', 241, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 10', 'text 10', '2019-07-10', 242, 1); args=['question 10', 'text 10', u'2019-07-10', 242, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 10', 'text 10', '2019-07-10', 242, 1); args=['question 10', 'text 10', u'2019-07-10', 242, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 11', 'text 11', '2019-07-10', 243, 1); args=['question 11', 'text 11', u'2019-07-10', 243, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 11', 'text 11', '2019-07-10', 243, 1); args=['question 11', 'text 11', u'2019-07-10', 243, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 12', 'text 12', '2019-07-10', 244, 1); args=['question 12', 'text 12', u'2019-07-10', 244, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 12', 'text 12', '2019-07-10', 244, 1); args=['question 12', 'text 12', u'2019-07-10', 244, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 13', 'text 13', '2019-07-10', 245, 1); args=['question 13', 'text 13', u'2019-07-10', 245, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 13', 'text 13', '2019-07-10', 245, 1); args=['question 13', 'text 13', u'2019-07-10', 245, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 14', 'text 14', '2019-07-10', 246, 1); args=['question 14', 'text 14', u'2019-07-10', 246, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 14', 'text 14', '2019-07-10', 246, 1); args=['question 14', 'text 14', u'2019-07-10', 246, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 15', 'text 15', '2019-07-10', 247, 1); args=['question 15', 'text 15', u'2019-07-10', 247, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 15', 'text 15', '2019-07-10', 247, 1); args=['question 15', 'text 15', u'2019-07-10', 247, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 16', 'text 16', '2019-07-10', 248, 1); args=['question 16', 'text 16', u'2019-07-10', 248, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 16', 'text 16', '2019-07-10', 248, 1); args=['question 16', 'text 16', u'2019-07-10', 248, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 17', 'text 17', '2019-07-10', 249, 1); args=['question 17', 'text 17', u'2019-07-10', 249, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 17', 'text 17', '2019-07-10', 249, 1); args=['question 17', 'text 17', u'2019-07-10', 249, 1]
+(0.001) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 18', 'text 18', '2019-07-10', 250, 1); args=['question 18', 'text 18', u'2019-07-10', 250, 1]
+(0.001) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 18', 'text 18', '2019-07-10', 250, 1); args=['question 18', 'text 18', u'2019-07-10', 250, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 19', 'text 19', '2019-07-10', 251, 1); args=['question 19', 'text 19', u'2019-07-10', 251, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 19', 'text 19', '2019-07-10', 251, 1); args=['question 19', 'text 19', u'2019-07-10', 251, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 20', 'text 20', '2019-07-10', 252, 1); args=['question 20', 'text 20', u'2019-07-10', 252, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 20', 'text 20', '2019-07-10', 252, 1); args=['question 20', 'text 20', u'2019-07-10', 252, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 21', 'text 21', '2019-07-10', 253, 1); args=['question 21', 'text 21', u'2019-07-10', 253, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 21', 'text 21', '2019-07-10', 253, 1); args=['question 21', 'text 21', u'2019-07-10', 253, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 22', 'text 22', '2019-07-10', 254, 1); args=['question 22', 'text 22', u'2019-07-10', 254, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 22', 'text 22', '2019-07-10', 254, 1); args=['question 22', 'text 22', u'2019-07-10', 254, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 23', 'text 23', '2019-07-10', 255, 1); args=['question 23', 'text 23', u'2019-07-10', 255, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 23', 'text 23', '2019-07-10', 255, 1); args=['question 23', 'text 23', u'2019-07-10', 255, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 24', 'text 24', '2019-07-10', 256, 1); args=['question 24', 'text 24', u'2019-07-10', 256, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 24', 'text 24', '2019-07-10', 256, 1); args=['question 24', 'text 24', u'2019-07-10', 256, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 25', 'text 25', '2019-07-10', 257, 1); args=['question 25', 'text 25', u'2019-07-10', 257, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 25', 'text 25', '2019-07-10', 257, 1); args=['question 25', 'text 25', u'2019-07-10', 257, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 26', 'text 26', '2019-07-10', 258, 1); args=['question 26', 'text 26', u'2019-07-10', 258, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 26', 'text 26', '2019-07-10', 258, 1); args=['question 26', 'text 26', u'2019-07-10', 258, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 27', 'text 27', '2019-07-10', 259, 1); args=['question 27', 'text 27', u'2019-07-10', 259, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 27', 'text 27', '2019-07-10', 259, 1); args=['question 27', 'text 27', u'2019-07-10', 259, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 28', 'text 28', '2019-07-10', 260, 1); args=['question 28', 'text 28', u'2019-07-10', 260, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 28', 'text 28', '2019-07-10', 260, 1); args=['question 28', 'text 28', u'2019-07-10', 260, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 29', 'text 29', '2019-07-10', 261, 1); args=['question 29', 'text 29', u'2019-07-10', 261, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question 29', 'text 29', '2019-07-10', 261, 1); args=['question 29', 'text 29', u'2019-07-10', 261, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question last', 'text', '2019-07-10', 0, 1); args=['question last', 'text', u'2019-07-10', 0, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('question last', 'text', '2019-07-10', 0, 1); args=['question last', 'text', u'2019-07-10', 0, 1]
+(0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` WHERE (`qa_question`.`id` = 3141592 AND `qa_question`.`title` = 'question about pi' AND `qa_question`.`text` = 'what is the last digit?' AND `qa_question`.`author_id` = 1); args=(3141592, 'question about pi', 'what is the last digit?', 1)
+(0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` WHERE (`qa_question`.`id` = 3141592 AND `qa_question`.`title` = 'question about pi' AND `qa_question`.`text` = 'what is the last digit?' AND `qa_question`.`author_id` = 1); args=(3141592, 'question about pi', 'what is the last digit?', 1)
+(0.000) DELETE FROM `qa_answer` WHERE `qa_answer`.`question_id` = 3141592; args=(3141592,)
+(0.000) DELETE FROM `qa_answer` WHERE `qa_answer`.`question_id` = 3141592; args=(3141592,)
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 0', '2019-07-10', 3141592, 1); args=['answer 0', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 0', '2019-07-10', 3141592, 1); args=['answer 0', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 1', '2019-07-10', 3141592, 1); args=['answer 1', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 1', '2019-07-10', 3141592, 1); args=['answer 1', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 2', '2019-07-10', 3141592, 1); args=['answer 2', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 2', '2019-07-10', 3141592, 1); args=['answer 2', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 3', '2019-07-10', 3141592, 1); args=['answer 3', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 3', '2019-07-10', 3141592, 1); args=['answer 3', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 4', '2019-07-10', 3141592, 1); args=['answer 4', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 4', '2019-07-10', 3141592, 1); args=['answer 4', u'2019-07-10', 3141592, 1]
+(0.002) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 5', '2019-07-10', 3141592, 1); args=['answer 5', u'2019-07-10', 3141592, 1]
+(0.002) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 5', '2019-07-10', 3141592, 1); args=['answer 5', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 6', '2019-07-10', 3141592, 1); args=['answer 6', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 6', '2019-07-10', 3141592, 1); args=['answer 6', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 7', '2019-07-10', 3141592, 1); args=['answer 7', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 7', '2019-07-10', 3141592, 1); args=['answer 7', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 8', '2019-07-10', 3141592, 1); args=['answer 8', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 8', '2019-07-10', 3141592, 1); args=['answer 8', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 9', '2019-07-10', 3141592, 1); args=['answer 9', u'2019-07-10', 3141592, 1]
+(0.000) INSERT INTO `qa_answer` (`text`, `added_at`, `question_id`, `author_id`) VALUES ('answer 9', '2019-07-10', 3141592, 1); args=['answer 9', u'2019-07-10', 3141592, 1]
+main_page
+(0.002) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.002) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.001) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.001) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10; args=()
+(0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10; args=()
+main_page
+(0.000) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.000) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.002) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10 OFFSET 10; args=()
+(0.002) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10 OFFSET 10; args=()
+main_page
+(0.002) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.002) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.003) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10 OFFSET 10; args=()
+(0.003) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10 OFFSET 10; args=()
+main_page
+(0.000) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.000) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
+(0.001) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10; args=()
+(0.001) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10; args=()
