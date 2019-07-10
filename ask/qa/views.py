@@ -35,6 +35,19 @@ def main_page(request, *args, **kwargs):
     })
 
 @require_GET
+def question_page(request, **kwargs):
+    logger = logging.getLogger(__name__)
+    logger.debug('question_page')
+    num = int(kwargs.get('num'))
+    question = get_object_or_404(Question, id=num)
+    print(question.title)
+    return render(request, 'question.html', {
+        'question': question,
+        'title': question.title,
+        'answers': Answer.objects.filter(question=question)[:]
+    })
+
+@require_GET
 def popular_page(request, *args, **kwargs):
     logger = logging.getLogger(__name__)
     logger.debug('popular_page')
@@ -51,15 +64,4 @@ def popular_page(request, *args, **kwargs):
         'page': page
     })
 
-@require_GET
-def question_page(request, **kwargs):
-    logger = logging.getLogger(__name__)
-    logger.debug('question_page')
-    num = int(kwargs.get('num'))
-    question = get_object_or_404(Question, id=num)
-    print(question.title)
-    return render(request, 'question.html', {
-        'question': question,
-        'title': question.title,
-        'answers': Answer.objects.filter(question=question)[:]
-    })
+
