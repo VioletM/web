@@ -29,6 +29,7 @@ def main_page(request, *args, **kwargs):
         'page': page
     })
 
+@require_GET
 def popular_page(request, *args, **kwargs):
     logger.info('popular_page')
     page = int(request.GET.get('page'))

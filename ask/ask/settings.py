@@ -134,10 +134,21 @@ LOGGING = {
         },
     },
     'loggers': {
-        'django': {
+
+        'django.request': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'ERROR',
             'propagate': True,
+        },
+        'django': {
+            'handlers': ['null', ],
+        },
+        'py.warnings': {
+            'handlers': ['null', ],
+        },
+        '': {
+            'handlers': ['file', 'production_file', 'debug_file'],
+            'level': "DEBUG",
         },
     },
 }
