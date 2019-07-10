@@ -145,10 +145,10 @@ LOGGING = {
             'propagate': True,
         },
         'django': {
-            'handlers': ['null', ],
+            'handlers': ['file', ],
         },
         'py.warnings': {
-            'handlers': ['null', ],
+            'handlers': ['file', ],
         },
         '': {
             'handlers': ['file'],

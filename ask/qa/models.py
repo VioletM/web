@@ -25,7 +25,7 @@ class Question(models.Model):
     likes = models.ManyToManyField(User, related_name='question_like_user')
 
     def get_url(self):
-        return reverse('question-page', kwargs={'num': self.id})
+        return reverse('question-page', kwargs={'num': self.pk})
 
 
 class Answer(models.Model):
