@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^', main_page, name='main-page'),
     url(r'^login/', test),
     url(r'^signup/', test),
-    url(r'^question/(?P<num>\d+)/', question_page, name='question-page'),
+    url(r'^question/(?P<num>\d+)', question_page, name='question-page'),
     url(r'^ask/', test),
     url(r'^popular/', popular_page, name='popular-page'),
     url(r'^new/', test),
