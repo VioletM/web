@@ -30,7 +30,6 @@ def main_page(request, *args, **kwargs):
         logger.debug(question.get_url())
         logger.debug(question.title)
     return render(request, 'index.html', {
-        'questions': page.object_list,
         'paginator': paginator,
         'page': page
     })
