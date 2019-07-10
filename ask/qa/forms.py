@@ -1,7 +1,7 @@
 from django import forms
 from qa.models import Question, Answer
 
-class AskForm(forms.ModelForm):
+class AskForm(forms.Form):
 
     title = forms.CharField(max_length=250)
     text = forms.CharField(widget=forms.Textarea)
@@ -14,7 +14,7 @@ class AskForm(forms.ModelForm):
         question.save()
         return question
 
-class AnswerForm(forms.ModelForm):
+class AnswerForm(forms.Form):
 
     text = forms.CharField(widget=forms.Textarea)
     question = forms.IntegerField()
