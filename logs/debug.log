@@ -1212,3 +1212,7 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [number] in '10
 (0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10 OFFSET 10; args=()
 (0.000) SELECT COUNT(*) AS `__count` FROM `qa_question`; args=()
 (0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` ORDER BY `qa_question`.`id` DESC LIMIT 10; args=()
+________________________________________________________________main_page
+________________________________________________________________main_page
+________________________________________________________________main_page
+________________________________________________________________main_page
