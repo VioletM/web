@@ -40,7 +40,6 @@ def popular_page(request, *args, **kwargs):
     page = paginator.page(page)
     paginator.baseurl = '/popular/?page='
     return render(request, 'index.html', {
-        'questions': page.object_list,
         'paginator': paginator,
         'page': page
     })
