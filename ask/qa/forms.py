@@ -7,7 +7,7 @@ class AskForm(forms.Form):
     text = forms.CharField(widget=forms.Textarea)
 
     def clean(self):
-        pass
+        return True
 
     def save(self):
         question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'], author_id=1)
@@ -20,7 +20,7 @@ class AnswerForm(forms.Form):
     question = forms.IntegerField()
 
     def clean(self):
-        pass
+        return True
 
     def save(self):
         answer = Answer(text=self.cleaned_data['text'], question=self.cleaned_data['question'], author_id=1)
