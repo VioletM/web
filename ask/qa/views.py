@@ -50,6 +50,8 @@ def question_page(request, **kwargs):
             url = question.get_url()
             logger.debug('url: {}'.format(url))
             return HttpResponseRedirect(url)
+        else:
+            logger.debug('FORMISNOTVALID!')
     else:
         form = AnswerForm(initial={'question': question.pk})
         return render(request, 'question.html', {
