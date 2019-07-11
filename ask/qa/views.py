@@ -51,7 +51,6 @@ def question_page(request, **kwargs):
             logger.debug('url: {}'.format(url))
             return HttpResponseRedirect(url)
     else:
-
         form = AnswerForm(initial={'question': question.pk})
         return render(request, 'question.html', {
             'question': question,
