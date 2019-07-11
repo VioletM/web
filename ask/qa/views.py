@@ -41,7 +41,10 @@ def question_page(request, **kwargs):
     question = get_object_or_404(Question, id=num)
 
     if request.method == 'POST':
-        form = AnswerForm(num, request.POST)
+        try:
+            form = AnswerForm(num, request.POST)
+        except Exception as e:
+            logger.debug(e)
         if form.is_valid():
             answer = form.save()
             url = question.get_url()
