@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
 from qa.forms import AskForm, AnswerForm
+from django.http import QueryDict
 import logging
 
 from qa.models import Question, Answer
@@ -41,10 +42,9 @@ def question_page(request, **kwargs):
     question = get_object_or_404(Question, id=num)
 
     if request.method == 'POST':
-        try:
-            form = AnswerForm(num, request.POST)
-        except Exception as e:
-            logger.debug(e)
+        clone_request = request.POST.copy()
+        clone_request['question_num'] = num
+        form = AnswerForm(clone_request)
         if form.is_valid():
             answer = form.save()
             url = question.get_url()
