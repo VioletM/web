@@ -45,7 +45,7 @@ def question_page(request, **kwargs):
         if form.is_valid():
             answer = form.save()
             url = question.get_url()
-            logger.debug(f"url: {url}")
+            logger.debug('url: {}'.format(url))
             return HttpResponseRedirect(url)
     else:
 
