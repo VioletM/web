@@ -42,7 +42,9 @@ def question_page(request, **kwargs):
     question = get_object_or_404(Question, id=num)
 
     if request.method == 'POST':
-        form = AnswerForm(num, request.POST)
+        clone_request = request.POST.copy()
+        clone_request['question'] = num
+        form = AnswerForm(clone_request)
         if form.is_valid():
             answer = form.save()
             url = question.get_url()
@@ -50,7 +52,7 @@ def question_page(request, **kwargs):
             return HttpResponseRedirect(url)
     else:
 
-        form = AnswerForm(num, initial={'question': question.pk})
+        form = AnswerForm(initial={'question': question.pk})
         return render(request, 'question.html', {
             'question': question,
             'title': question.title,

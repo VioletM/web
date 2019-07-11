@@ -1,6 +1,7 @@
 from django import forms
 from qa.models import Question, Answer
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 
 class AskForm(forms.Form):
 
@@ -46,6 +47,7 @@ class AnswerForm(forms.Form):
             user.is_staff = True
             user.is_superuser = True
             user.save()
-        answer = Answer(text=self.cleaned_data['text'], question=self._question_num, author=user)
+        question = get_object_or_404(Question, id=self.cleaned_data['question'])
+        answer = Answer(text=self.cleaned_data['text'], question=question, author=user)
         answer.save()
         return answer
