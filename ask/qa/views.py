@@ -1,4 +1,5 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
@@ -34,6 +35,7 @@ def main_page(request, *args, **kwargs):
     })
 
 
+@csrf_exempt
 def question_page(request, **kwargs):
     logger = logging.getLogger(__name__)
     logger.debug('question_page')
