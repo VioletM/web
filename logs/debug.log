@@ -1302,3 +1302,188 @@ Traceback (most recent call last):
 django.db.utils.IntegrityError: (1048, "Column 'author_id' cannot be null")
 (0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` LIMIT 21; args=()
 (0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` LIMIT 21; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@sql_mode; args=None
+(0.000) SELECT @@sql_mode; args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT VERSION(); args=None
+(0.002) SHOW FULL TABLES; args=None
+(0.002) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.001) 
+            SELECT kc.`constraint_name`, kc.`column_name`,
+                kc.`referenced_table_name`, kc.`referenced_column_name`
+            FROM information_schema.key_column_usage AS kc
+            WHERE
+                kc.table_schema = DATABASE() AND
+                kc.table_name = 'qa_answer'
+        ; args=['qa_answer']
+(0.001) 
+            SELECT kc.`constraint_name`, kc.`column_name`,
+                kc.`referenced_table_name`, kc.`referenced_column_name`
+            FROM information_schema.key_column_usage AS kc
+            WHERE
+                kc.table_schema = DATABASE() AND
+                kc.table_name = 'qa_answer'
+        ; args=['qa_answer']
+(0.000) 
+            SELECT c.constraint_name, c.constraint_type
+            FROM information_schema.table_constraints AS c
+            WHERE
+                c.table_schema = DATABASE() AND
+                c.table_name = 'qa_answer'
+        ; args=['qa_answer']
+(0.000) 
+            SELECT c.constraint_name, c.constraint_type
+            FROM information_schema.table_constraints AS c
+            WHERE
+                c.table_schema = DATABASE() AND
+                c.table_name = 'qa_answer'
+        ; args=['qa_answer']
+(0.000) SHOW INDEX FROM `qa_answer`; args=None
+(0.000) SHOW INDEX FROM `qa_answer`; args=None
+ALTER TABLE `qa_answer` DROP FOREIGN KEY `qa_answer_author_id_fdca825d_fk_auth_user_id`; (params [])
+ALTER TABLE `qa_answer` DROP FOREIGN KEY `qa_answer_author_id_fdca825d_fk_auth_user_id`; (params [])
+(0.353) ALTER TABLE `qa_answer` DROP FOREIGN KEY `qa_answer_author_id_fdca825d_fk_auth_user_id`; args=[]
+(0.353) ALTER TABLE `qa_answer` DROP FOREIGN KEY `qa_answer_author_id_fdca825d_fk_auth_user_id`; args=[]
+ALTER TABLE `qa_answer` ADD CONSTRAINT `qa_answer_author_id_fdca825d_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); (params [])
+ALTER TABLE `qa_answer` ADD CONSTRAINT `qa_answer_author_id_fdca825d_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); (params [])
+(0.151) ALTER TABLE `qa_answer` ADD CONSTRAINT `qa_answer_author_id_fdca825d_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); args=[]
+(0.151) ALTER TABLE `qa_answer` ADD CONSTRAINT `qa_answer_author_id_fdca825d_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); args=[]
+(0.005) 
+            SELECT kc.`constraint_name`, kc.`column_name`,
+                kc.`referenced_table_name`, kc.`referenced_column_name`
+            FROM information_schema.key_column_usage AS kc
+            WHERE
+                kc.table_schema = DATABASE() AND
+                kc.table_name = 'qa_question'
+        ; args=['qa_question']
+(0.005) 
+            SELECT kc.`constraint_name`, kc.`column_name`,
+                kc.`referenced_table_name`, kc.`referenced_column_name`
+            FROM information_schema.key_column_usage AS kc
+            WHERE
+                kc.table_schema = DATABASE() AND
+                kc.table_name = 'qa_question'
+        ; args=['qa_question']
+(0.000) 
+            SELECT c.constraint_name, c.constraint_type
+            FROM information_schema.table_constraints AS c
+            WHERE
+                c.table_schema = DATABASE() AND
+                c.table_name = 'qa_question'
+        ; args=['qa_question']
+(0.000) 
+            SELECT c.constraint_name, c.constraint_type
+            FROM information_schema.table_constraints AS c
+            WHERE
+                c.table_schema = DATABASE() AND
+                c.table_name = 'qa_question'
+        ; args=['qa_question']
+(0.004) SHOW INDEX FROM `qa_question`; args=None
+(0.004) SHOW INDEX FROM `qa_question`; args=None
+ALTER TABLE `qa_question` DROP FOREIGN KEY `qa_question_author_id_3665c779_fk_auth_user_id`; (params [])
+ALTER TABLE `qa_question` DROP FOREIGN KEY `qa_question_author_id_3665c779_fk_auth_user_id`; (params [])
+(0.102) ALTER TABLE `qa_question` DROP FOREIGN KEY `qa_question_author_id_3665c779_fk_auth_user_id`; args=[]
+(0.102) ALTER TABLE `qa_question` DROP FOREIGN KEY `qa_question_author_id_3665c779_fk_auth_user_id`; args=[]
+ALTER TABLE `qa_question` ADD CONSTRAINT `qa_question_author_id_3665c779_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); (params [])
+ALTER TABLE `qa_question` ADD CONSTRAINT `qa_question_author_id_3665c779_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); (params [])
+(0.052) ALTER TABLE `qa_question` ADD CONSTRAINT `qa_question_author_id_3665c779_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); args=[]
+(0.052) ALTER TABLE `qa_question` ADD CONSTRAINT `qa_question_author_id_3665c779_fk_auth_user_id` FOREIGN KEY (`author_id`) REFERENCES `auth_user` (`id`); args=[]
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SHOW FULL TABLES; args=None
+(0.002) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('qa', '0006_auto_20190711_0754', '2019-07-11 07:54:33'); args=['qa', '0006_auto_20190711_0754', '2019-07-11 07:54:33']
+(0.002) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('qa', '0006_auto_20190711_0754', '2019-07-11 07:54:33'); args=['qa', '0006_auto_20190711_0754', '2019-07-11 07:54:33']
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+(0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+(0.004) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+(0.004) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+(0.002) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+(0.002) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+(0.002) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+(0.002) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+(0.004) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+(0.004) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+(0.005) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+(0.005) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+(0.003) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'answer' AND `django_content_type`.`app_label` = 'qa'); args=('answer', 'qa')
+(0.003) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'answer' AND `django_content_type`.`app_label` = 'qa'); args=('answer', 'qa')
+(0.003) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'question' AND `django_content_type`.`app_label` = 'qa'); args=('question', 'qa')
+(0.003) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'question' AND `django_content_type`.`app_label` = 'qa'); args=('question', 'qa')
+(0.003) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8, 7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8, 7)
+(0.003) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8, 7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8, 7)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'qa'; args=('qa',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'qa'; args=('qa',)
+ask_page
+ask_page
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'first_user'; args=('first_user',)
+(0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'first_user'; args=('first_user',)
+(0.000) INSERT INTO `auth_user` (`password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES ('', NULL, 1, 'first_user', '', '', '', 1, 1, '2019-07-11 07:54:43'); args=['', None, True, 'first_user', '', '', '', True, True, '2019-07-11 07:54:43']
+(0.000) INSERT INTO `auth_user` (`password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES ('', NULL, 1, 'first_user', '', '', '', 1, 1, '2019-07-11 07:54:43'); args=['', None, True, 'first_user', '', '', '', True, True, '2019-07-11 07:54:43']
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('x123', '2bo!2b?', '2019-07-11', 0, 1); args=['x123', '2bo!2b?', '2019-07-11', 0, 1]
+(0.000) INSERT INTO `qa_question` (`title`, `text`, `added_at`, `rating`, `author_id`) VALUES ('x123', '2bo!2b?', '2019-07-11', 0, 1); args=['x123', '2bo!2b?', '2019-07-11', 0, 1]
+question_page
+(0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` WHERE `qa_question`.`id` = 1; args=(1,)
+(0.000) SELECT `qa_question`.`id`, `qa_question`.`title`, `qa_question`.`text`, `qa_question`.`added_at`, `qa_question`.`rating`, `qa_question`.`author_id` FROM `qa_question` WHERE `qa_question`.`id` = 1; args=(1,)
+(0.000) SELECT `qa_answer`.`id`, `qa_answer`.`text`, `qa_answer`.`added_at`, `qa_answer`.`question_id`, `qa_answer`.`author_id` FROM `qa_answer` WHERE `qa_answer`.`question_id` = 1; args=(1,)
+(0.000) SELECT `qa_answer`.`id`, `qa_answer`.`text`, `qa_answer`.`added_at`, `qa_answer`.`question_id`, `qa_answer`.`author_id` FROM `qa_answer` WHERE `qa_answer`.`question_id` = 1; args=(1,)
+question_page
+Internal Server Error: /question/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.4/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view qa.views.question_page didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /question/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.4/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view qa.views.question_page didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /question/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.4/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view qa.views.question_page didn't return an HttpResponse object. It returned None instead.
