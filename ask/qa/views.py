@@ -41,6 +41,7 @@ def question_page(request, **kwargs):
     question = get_object_or_404(Question, id=num)
 
     if request.method == 'POST':
+        request.POST['question'] = num
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save()
