@@ -37,15 +37,17 @@ def question_page(request, **kwargs):
     logger = logging.getLogger(__name__)
     logger.debug('question_page')
 
+    num = int(kwargs.get('num'))
+    question = get_object_or_404(Question, id=num)
+
     if request.method == 'POST':
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save()
-            url = answer.question.get_url()
+            url = question.get_url()
             return HttpResponseRedirect(url)
     else:
-        num = int(kwargs.get('num'))
-        question = get_object_or_404(Question, id=num)
+
         form = AnswerForm(initial={'question': question.pk})
         return render(request, 'question.html', {
             'question': question,
