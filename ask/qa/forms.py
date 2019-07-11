@@ -10,7 +10,7 @@ class AskForm(forms.Form):
         pass
 
     def save(self):
-        question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'], author_id=1)
+        question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'])
         question.save()
         return question
 
@@ -23,6 +23,6 @@ class AnswerForm(forms.Form):
         pass
 
     def save(self):
-        answer = Answer(text=self.cleaned_data['text'], question=self.cleaned_data['question'], author_id=1)
+        answer = Answer(text=self.cleaned_data['text'], question=self.cleaned_data['question'])
         answer.save()
         return answer
