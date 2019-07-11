@@ -44,7 +44,7 @@ def question_page(request, **kwargs):
     if request.method == 'POST':
         clone_request = request.POST.copy()
         clone_request['question_num'] = num
-        form = AnswerForm(clone_request)
+        form = AnswerForm(data=clone_request)
         if form.is_valid():
             answer = form.save()
             url = question.get_url()
