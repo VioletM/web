@@ -51,7 +51,13 @@ def question_page(request, **kwargs):
             answer = form.save()
             url = question.get_url()
             logger.debug('url: {}'.format(url))
-            return HttpResponseRedirect(url)
+            newform = AnswerForm(initial={'question': question.pk})
+            return render(request, 'question.html', {
+                'question': question,
+                'title': question.title,
+                'answers': Answer.objects.filter(question=question)[:],
+                'form': newform,
+            })
         else:
             logger.debug('FORMISNOTVALID!')
     else:
