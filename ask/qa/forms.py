@@ -26,6 +26,10 @@ class AskForm(forms.Form):
 
 class AnswerForm(forms.Form):
 
+    def __init__(self, question_num, *args, **kwargs):
+        self._question_num = question_num
+        super(AnswerForm, self).__init__(**kwargs)
+
     text = forms.CharField(widget=forms.Textarea)
     question = forms.IntegerField()
 
@@ -42,6 +46,6 @@ class AnswerForm(forms.Form):
             user.is_staff = True
             user.is_superuser = True
             user.save()
-        answer = Answer(text=self.cleaned_data['text'], question=self.cleaned_data['question'], author=user)
+        answer = Answer(text=self.cleaned_data['text'], question=self._question_num, author=user)
         answer.save()
         return answer
