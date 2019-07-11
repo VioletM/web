@@ -1,5 +1,6 @@
 from django import forms
 from qa.models import Question, Answer
+from django.contrib.auth.models import User
 
 class AskForm(forms.Form):
 
@@ -10,7 +11,16 @@ class AskForm(forms.Form):
         pass
 
     def save(self):
-        question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'])
+        try:
+            user = User.objects.get(username='first_user')
+        except User.DoesNotExist:
+            # Create a new user. There's no need to set a password
+            # because only the password from settings.py is checked.
+            user = User(username='first_user')
+            user.is_staff = True
+            user.is_superuser = True
+            user.save()
+        question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'], author=user)
         question.save()
         return question
 
@@ -23,6 +33,15 @@ class AnswerForm(forms.Form):
         pass
 
     def save(self):
-        answer = Answer(text=self.cleaned_data['text'], question=self.cleaned_data['question'])
+        try:
+            user = User.objects.get(username='first_user')
+        except User.DoesNotExist:
+            # Create a new user. There's no need to set a password
+            # because only the password from settings.py is checked.
+            user = User(username='first_user')
+            user.is_staff = True
+            user.is_superuser = True
+            user.save()
+        answer = Answer(text=self.cleaned_data['text'], question=self.cleaned_data['question'], author=user)
         answer.save()
         return answer
