@@ -8,8 +8,7 @@
 <h1>Questions</h1>
 
 {% for question in page.object_list %}
-<h3>{{question.title}}</h3>
-<a href="{{ question.get_url }}"></a>
+<a href="{{ question.get_url }}"><h3>{{question.title}}</h3></a>
 {% endfor %}
 
 <nav>

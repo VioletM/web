@@ -1,21 +1,25 @@
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.views.decorators.csrf import csrf_exempt
-from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
-from django.views.decorators.http import require_GET
-from qa.forms import AskForm, AnswerForm
-from django.http import QueryDict
+import datetime as dt
 import logging
 
+from django.contrib.auth import authenticate, login
+from django.core.paginator import Paginator
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_GET
+
+from qa.forms import AskForm, AnswerForm, RegistrationForm, LoginForm
 from qa.models import Question, Answer
 
 logger = logging.getLogger(__name__)
+
 
 @require_GET
 def test(request, *args, **kwargs):
     logger = logging.getLogger(__name__)
     logger.debug('test')
     return HttpResponse('OK')
+
 
 @require_GET
 def main_page(request, *args, **kwargs):
@@ -44,22 +48,22 @@ def question_page(request, **kwargs):
     question = get_object_or_404(Question, id=num)
 
     if request.method == 'POST':
-        clone_request = request.POST.copy()
-        clone_request['question'] = num
-        form = AnswerForm(clone_request)
-        if form.is_valid():
-            answer = form.save()
-            url = question.get_url()
-            logger.debug('url: {}'.format(url))
-            newform = AnswerForm(initial={'question': question.pk})
-            return render(request, 'question.html', {
-                'question': question,
-                'title': question.title,
-                'answers': Answer.objects.filter(question=question)[:],
-                'form': newform,
-            })
+        if request.user.is_authenticated:
+            form = AnswerForm(request.POST)
+            form._user = request.user
+            if form.is_valid():
+                answer = form.save()
+                url = question.get_url()
+                logger.debug('url: {}'.format(url))
+                newform = AnswerForm(initial={'question': question.pk})
+                return render(request, 'question.html', {
+                    'question': question,
+                    'title': question.title,
+                    'answers': Answer.objects.filter(question=question)[:],
+                    'form': newform,
+                })
         else:
-            logger.debug('FORMISNOTVALID!')
+            return HttpResponseRedirect('/login/')
     else:
         form = AnswerForm(initial={'question': question.pk})
         return render(request, 'question.html', {
@@ -68,6 +72,7 @@ def question_page(request, **kwargs):
             'answers': Answer.objects.filter(question=question)[:],
             'form': form,
         })
+
 
 @require_GET
 def popular_page(request, *args, **kwargs):
@@ -86,18 +91,50 @@ def popular_page(request, *args, **kwargs):
         'page': page
     })
 
+
 def ask_page(request, *args, **kwargs):
     logger = logging.getLogger(__name__)
     logger.debug('ask_page')
     if request.method == 'POST':
-        form = AskForm(request.POST)
-        if form.is_valid():
-            question = form.save()
-            url = question.get_url()
-            return HttpResponseRedirect(url)
+        if request.user.is_authenticated:
+            form = AskForm(request.POST)
+            if form.is_valid():
+                question = form.save()
+                url = question.get_url()
+                return HttpResponseRedirect(url)
+        else:
+            return HttpResponseRedirect('/login/')
     else:
         form = AskForm()
         return render(request, 'ask.html', {'form': form})
 
 
-# form = AnswerForm(initial={'question': question_id})
+def signup_page(request, *args, **kwargs):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+        return HttpResponseRedirect('/')
+    else:
+        form = RegistrationForm()
+        return render(request, 'signup.html', {'form': form})
+
+
+def login_page(request, *args, **kwargs):
+    error = ''
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username, password = form.save()
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                logger.debug(f'username: {user.username}')
+                login(request, user)
+                response = HttpResponseRedirect('/')
+                response.set_cookie('sessid', request.session.session_key, expires=dt.datetime.now() + dt.timedelta(days=5))
+                return response
+            else:
+                error = u'Wrong password or username'
+    form = LoginForm()
+    return render(request, 'login.html', {'error': error, 'form': form})

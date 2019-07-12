@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+LOGIN_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
@@ -76,17 +76,18 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 
 DATABASES = {
 
-    'default': {
+    # 'default': {
+    #
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'stepic_web',
+    #     'USER': 'box',
+    # }
 
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'stepic_web',
-        'USER': 'box',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
     }
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'mydatabase'
-    # }
 }
 
 

@@ -1,7 +1,5 @@
 from __future__ import unicode_literals
 
-import datetime as dt
-
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
