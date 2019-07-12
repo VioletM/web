@@ -129,7 +129,6 @@ def login_page(request, *args, **kwargs):
             username, password = form.save()
             user = authenticate(request, username=username, password=password)
             if user is not None:
-                logger.debug(f'username: {user.username}')
                 login(request, user)
                 response = HttpResponseRedirect('/')
                 response.set_cookie('sessid', request.session.session_key, expires=dt.datetime.now() + dt.timedelta(days=5))
