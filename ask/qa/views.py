@@ -98,6 +98,7 @@ def ask_page(request, *args, **kwargs):
     if request.method == 'POST':
         if request.user.is_authenticated:
             form = AskForm(request.POST)
+            form._user = request.user
             if form.is_valid():
                 question = form.save()
                 url = question.get_url()

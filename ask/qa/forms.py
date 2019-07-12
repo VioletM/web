@@ -13,16 +13,7 @@ class AskForm(forms.Form):
         pass
 
     def save(self):
-        try:
-            user = User.objects.get(username='first_user')
-        except User.DoesNotExist:
-            # Create a new user. There's no need to set a password
-            # because only the password from settings.py is checked.
-            user = User(username='first_user')
-            user.is_staff = True
-            user.is_superuser = True
-            user.save()
-        question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'], author=user)
+        question = Question(text=self.cleaned_data['text'], title=self.cleaned_data['title'], author=self._user)
         question.save()
         return question
 
