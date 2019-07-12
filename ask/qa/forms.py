@@ -50,8 +50,8 @@ class RegistrationForm(forms.Form):
         pass
 
     def save(self):
-        user = User(username=self.cleaned_data['username'], email=self.cleaned_data['email'],
-                    password=self.cleaned_data['password'])
+        user = User(username=self.cleaned_data['username'], email=self.cleaned_data['email'])
+        user.set_password(self.cleaned_data['password'])
         user.save()
         return user
 
