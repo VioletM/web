@@ -127,7 +127,7 @@ def login_page(request, *args, **kwargs):
         form = LoginForm(request.POST)
         if form.is_valid():
             username, password = form.save()
-            user = authenticate(request, username=username, password=password)
+            user = authenticate(username=username, password=password)
             logger.debug('user: {}'.format(user))
             if user is not None:
                 login(request, user)
